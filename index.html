@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PDF 工具箱 — 合并·拆分·水印·旋转·压缩 免费在线</title>
+<meta name="description" content="免费在线 PDF 工具：合并、拆分、提取页码、删除页面、旋转、加文字水印、统一页面尺寸、查看信息。全程浏览器本地处理，文件不上传，手机电脑都能用。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e04848'/%3E%3Ctext x='32' y='44' font-size='28' text-anchor='middle' fill='white' font-weight='bold'%3EPDF%3C/text%3E%3C/svg%3E">
+<style>
+:root{--red:#e04848;--red2:#b83232;--ink:#1a2233;--ink2:#55617a;--ink3:#8b95a8;--line:#e3e8f0;--bg:#fbf6f6;--card:#fff;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei UI",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:env(safe-area-inset-bottom)}
+.wrap{max-width:860px;margin:0 auto;padding:0 14px}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:10px;height:54px}
+.logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#f06060,#b83232);
+  display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:800;flex:none}
+.hd b{font-size:16px}
+.hd .tag{font-size:10.5px;color:#fff;background:var(--red);padding:2px 8px;border-radius:999px;font-weight:600}
+.hd .pc{margin-left:auto;font-size:12px;color:var(--ink3)}
+nav{display:flex;gap:7px;padding:12px 0 4px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:#fff;
+  font-size:13.5px;font-weight:600;color:var(--ink2);cursor:pointer;white-space:nowrap}
+nav button.on{background:linear-gradient(135deg,#f06060,#b83232);color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px rgba(224,72,72,.3)}
+section{display:none;padding:10px 0 30px}
+section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.card h3{font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.hint{font-size:12.5px;color:var(--ink3);margin-bottom:10px}
+label{font-size:13px;color:var(--ink2)}
+select,input[type=text],input[type=number]{border:1px solid var(--line);border-radius:8px;padding:8px 10px;
+  font-size:14px;background:#fff;color:var(--ink);max-width:100%;font-family:inherit}
+.drop{border:2px dashed #f0c8c8;border-radius:12px;padding:26px 14px;text-align:center;color:var(--ink2);
+  font-size:14px;cursor:pointer;transition:.15s;background:#fffafa}
+.drop:active,.drop.over{border-color:var(--red);background:#fff0f0}
+.drop small{display:block;color:var(--ink3);font-size:12px;margin-top:4px}
+.flist{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.fitem{display:flex;align-items:center;gap:8px;font-size:13px;background:#fdf4f4;border-radius:8px;padding:7px 10px}
+.fitem .ord{width:18px;height:18px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;
+  display:inline-flex;align-items:center;justify-content:center;flex:none}
+.fitem .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fitem .sz{color:var(--ink3);font-size:12px;flex:none}
+.fitem .mv{flex:none;color:var(--ink3);font-size:11px;width:30px;text-align:center;cursor:pointer}
+.fitem button{flex:none;border:none;background:none;color:#c04040;font-size:16px;cursor:pointer;padding:0 4px}
+.opt{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0}
+.go{width:100%;padding:13px;border:none;border-radius:11px;font-size:15.5px;font-weight:700;color:#fff;cursor:pointer;
+  background:linear-gradient(135deg,#f06060,#b83232);box-shadow:0 6px 18px rgba(224,72,72,.32)}
+.go:disabled{opacity:.45;cursor:default}
+.btn2{padding:9px 16px;border:1px solid var(--line);background:#fff;border-radius:9px;font-size:13.5px;
+  color:var(--ink2);cursor:pointer;font-weight:600}
+.btn2:hover{border-color:var(--red);color:var(--red)}
+.prog{height:6px;background:#f5e6e6;border-radius:4px;overflow:hidden;margin-top:10px;display:none}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f06060,#b83232);transition:width .2s}
+.log{font-size:12.5px;color:var(--ink2);margin-top:10px;max-height:130px;overflow-y:auto;font-family:ui-monospace,Consolas,monospace}
+.log div{padding:1px 0}
+.log .err{color:#c04040}
+.log .ok{color:#2fa360}
+.res{margin-top:10px}
+.res .row{display:flex;align-items:center;gap:8px;padding:9px 10px;border:1px solid var(--line);
+  border-radius:9px;margin-bottom:7px;background:#fff;font-size:13px}
+.res .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.res .row .sz{color:var(--ink3);font-size:12px;flex:none}
+.res .row a{flex:none;text-decoration:none;background:var(--red);color:#fff;font-size:12.5px;
+  padding:5px 13px;border-radius:7px;font-weight:600;cursor:pointer}
+.bigdl{display:block;text-align:center;background:#2fa360;color:#fff;text-decoration:none;
+  padding:12px;border-radius:11px;font-weight:700;font-size:15px;margin-top:10px;cursor:pointer}
+.promo{background:linear-gradient(135deg,#fff0f0,#fbf6f6);border:1px solid #f5dada;border-radius:var(--r);
+  padding:13px 16px;margin-bottom:14px;font-size:13px;color:var(--ink2)}
+.promo b{color:var(--ink)}
+.warn{background:#fffaf0;border:1px solid #f5e0b8;border-radius:10px;padding:10px 13px;
+  font-size:12.5px;color:#8a6420;margin-top:10px}
+footer{border-top:1px solid var(--line);background:#fff;padding:20px 0 32px;margin-top:10px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--ink3)}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:#fdeeee;color:var(--red2);border-radius:999px;padding:3px 11px;font-size:11.5px;font-weight:600}
+@media(max-width:560px){.hd .pc{display:none}nav button{padding:7px 12px;font-size:13px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo">PDF</div>
+    <b>PDF 工具箱</b>
+    <span class="tag">免费</span>
+    <span class="pc">本地处理 · 文件不上传</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav>
+    <button class="on" data-t="merge">🔗 合并</button>
+    <button data-t="split">✂️ 拆分</button>
+    <button data-t="pages">📄 页面操作</button>
+    <button data-t="wm">💧 水印</button>
+    <button data-t="size">📐 页面尺寸</button>
+    <button data-t="info">ℹ️ 查看信息</button>
+  </nav>
+
+  <div class="promo">🔒 所有操作都在<b>你的浏览器里</b>完成，PDF 不会上传到任何服务器。<b>合同、标书、证件等敏感文件也放心用。</b></div>
+
+  <!-- ========== 合并 ========== -->
+  <section id="s-merge" class="on">
+    <div class="card">
+      <h3>选择 PDF</h3>
+      <div class="drop" id="m-drop">点我选择 PDF（可多选）<small>按列表顺序合并，可点 ↑ 调整</small></div>
+      <input type="file" id="m-files" accept=".pdf,application/pdf" multiple hidden>
+      <div class="flist" id="m-list"></div>
+    </div>
+    <div class="card">
+      <button class="go" id="m-run">合并成一个 PDF</button>
+      <div class="prog" id="m-prog"><i></i></div>
+      <div class="log" id="m-log"></div>
+      <div class="res" id="m-res"></div>
+    </div>
+  </section>
+
+  <!-- ========== 拆分 ========== -->
+  <section id="s-split">
+    <div class="card">
+      <h3>选择 PDF（只处理第一个）</h3>
+      <div class="drop" id="s-drop">点我选择 PDF<small>拆分只处理列表里第一个文件</small></div>
+      <input type="file" id="s-files" accept=".pdf,application/pdf" multiple hidden>
+      <div class="flist" id="s-list"></div>
+      <div class="hint" id="s-info"></div>
+    </div>
+    <div class="card">
+      <div class="opt">
+        <label>拆分方式</label>
+        <div class="seg" id="s-mode">
+          <button data-v="each" class="on">每页一个</button>
+          <button data-v="chunk">每N页</button>
+          <button data-v="range">提取页码</button>
+        </div>
+      </div>
+      <div class="opt" id="s-args"></div>
+      <button class="go" id="s-run">开始拆分</button>
+      <div class="prog" id="s-prog"><i></i></div>
+      <div class="log" id="s-log"></div>
+      <div class="res" id="s-res"></div>
+    </div>
+  </section>
+
+  <!-- ========== 页面操作 ========== -->
+  <section id="s-pages">
+    <div class="card">
+      <h3>选择 PDF</h3>
+      <div class="drop" id="p-drop">点我选择 PDF<small>删除页面 / 旋转 / 倒序</small></div>
+      <input type="file" id="p-files" accept=".pdf,application/pdf" hidden>
+      <div class="flist" id="p-list"></div>
+      <div class="hint" id="p-info"></div>
+    </div>
+    <div class="card">
+      <h3>操作</h3>
+      <div class="opt">
+        <label>删除页面</label>
+        <input type="text" id="p-del" placeholder="如 2,5,8-10（留空=不删）" style="flex:1;min-width:140px">
+      </div>
+      <div class="opt">
+        <label>旋转</label>
+        <select id="p-rot">
+          <option value="0">不旋转</option>
+          <option value="90">顺时针 90°</option>
+          <option value="180">180°</option>
+          <option value="270">270°</option>
+        </select>
+        <label>作用于</label>
+        <input type="text" id="p-rotp" placeholder="留空=全部" style="width:110px">
+      </div>
+      <div class="opt">
+        <label class="check"><input type="checkbox" id="p-rev">页面倒序</label>
+      </div>
+      <button class="go" id="p-run">处理</button>
+      <div class="prog" id="p-prog"><i></i></div>
+      <div class="log" id="p-log"></div>
+      <div class="res" id="p-res"></div>
+    </div>
+  </section>
+
+  <!-- ========== 水印 ========== -->
+  <section id="s-wm">
+    <div class="card">
+      <h3>选择 PDF</h3>
+      <div class="drop" id="w-drop">点我选择 PDF（可多选）<small>给每页加文字水印</small></div>
+      <input type="file" id="w-files" accept=".pdf,application/pdf" multiple hidden>
+      <div class="flist" id="w-list"></div>
+    </div>
+    <div class="card">
+      <div class="opt">
+        <label>水印文字</label>
+        <input type="text" id="w-text" placeholder="如：机密 / 内部资料" style="flex:1;min-width:140px">
+      </div>
+      <div class="opt">
+        <label>位置</label>
+        <select id="w-pos">
+          <option value="center">居中</option><option value="se">右下</option>
+          <option value="sw">左下</option><option value="ne">右上</option><option value="nw">左上</option>
+        </select>
+        <label>字号</label>
+        <input type="number" id="w-size" value="40" style="width:70px">
+        <label>透明度</label>
+        <input type="number" id="w-op" value="15" min="3" max="100" style="width:70px">
+        <span style="font-size:12.5px;color:var(--ink3)">%</span>
+        <label>角度</label>
+        <input type="number" id="w-rot" value="45" style="width:70px">
+      </div>
+      <div class="warn">⚠ 网页版水印<b>只支持英文和数字</b>（浏览器内置字体不含中文）。中文水印请用桌面版。</div>
+      <button class="go" id="w-run" style="margin-top:12px">加水印</button>
+      <div class="prog" id="w-prog"><i></i></div>
+      <div class="log" id="w-log"></div>
+      <div class="res" id="w-res"></div>
+    </div>
+  </section>
+
+  <!-- ========== 页面尺寸 ========== -->
+  <section id="s-size">
+    <div class="card">
+      <h3>选择 PDF</h3>
+      <div class="drop" id="z-drop">点我选择 PDF（可多选）<small>统一纸张尺寸</small></div>
+      <input type="file" id="z-files" accept=".pdf,application/pdf" multiple hidden>
+      <div class="flist" id="z-list"></div>
+    </div>
+    <div class="card">
+      <div class="opt">
+        <label>目标尺寸</label>
+        <select id="z-target">
+          <option value="a4">A4（210×297mm）</option>
+          <option value="letter">Letter</option>
+          <option value="a3">A3</option>
+          <option value="custom">自定义</option>
+        </select>
+        <span id="z-custom" style="display:none">
+          <input type="number" id="z-w" value="595" style="width:80px" placeholder="宽 pt">
+          <span style="color:var(--ink3)">×</span>
+          <input type="number" id="z-h" value="842" style="width:80px" placeholder="高 pt">
+          <span style="font-size:12.5px;color:var(--ink3)">pt</span>
+        </span>
+      </div>
+      <div class="warn">⚠ 网页版只能改纸张尺寸，<b>不能缩放页面内容</b>（浏览器限制）。内容不会被裁切，但可能留白。需要精确缩放请用桌面版。</div>
+      <button class="go" id="z-run" style="margin-top:12px">统一尺寸</button>
+      <div class="prog" id="z-prog"><i></i></div>
+      <div class="log" id="z-log"></div>
+      <div class="res" id="z-res"></div>
+    </div>
+  </section>
+
+  <!-- ========== 查看信息 ========== -->
+  <section id="s-info">
+    <div class="card">
+      <h3>选择 PDF</h3>
+      <div class="drop" id="i-drop">点我选择 PDF<small>查看页数、尺寸、元数据</small></div>
+      <input type="file" id="i-files" accept=".pdf,application/pdf" hidden>
+      <div class="flist" id="i-list"></div>
+    </div>
+    <div class="card">
+      <button class="go" id="i-run">读取信息</button>
+      <div class="log" id="i-log" style="max-height:none"></div>
+      <div class="res" id="i-res"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="badges">
+      <span class="badge">✓ 不上传</span><span class="badge">✓ 不用注册</span>
+      <span class="badge">✓ 手机可用</span><span class="badge">✓ 完全免费</span>
+    </div>
+    <div>6 大功能 · 浏览器本地处理</div>
+  </div>
+</footer>
+
+<script src="libs/pdf-lib.min.js"></script>
+<script src="libs/jszip.min.js"></script>
+<script src="pdf-core.js"></script>
+<script src="pdf-app.js"></script>
+</body>
+</html>
